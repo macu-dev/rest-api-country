@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'utilities/variables';
+@import 'layout/header';
+@import 'components/search.scss';
+@import 'components/filters.scss';
+
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: $nunito;
+  background-color: $lightBg;
+}
+
+main{
+  padding-top: 130px;
+  height:100%;
+}
+

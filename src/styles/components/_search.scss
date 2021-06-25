@@ -1,0 +1,18 @@
+.input {
+  border: none !important;
+  padding: 0 !important;
+  padding-left: 2rem !important;
+  width: 25rem !important;
+
+  &-group{
+    padding: 0.8rem 1.5rem  !important;
+  }
+  &__logo{
+    width:20px;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    margin: auto 0;
+  }
+}
