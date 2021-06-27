@@ -1,0 +1,14 @@
+.card {
+
+  border:none!important;
+  &-body, &-img-top{
+    flex: 1 1 auto !important;
+  }
+
+  &-img-top{
+    object-fit:cover;
+    max-height: 50%;
+  }
+
+
+}

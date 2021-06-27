@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {LayoutComponent} from './CountryApp/layout/layout.component';
 import { SharedModule } from './CountryApp/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -13,12 +15,13 @@ import { SharedModule } from './CountryApp/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'utilities/variables';
 @import 'layout/header';
-@import 'components/search.scss';
-@import 'components/filters.scss';
+@import 'components/search';
+@import 'components/filters';
+@import 'components/cards';
 
 
 body {
   width: 100%;
   min-height: 100vh;
   box-sizing: border-box;
-  font-family: $nunito;
+  font-family: $nunito !important;
   background-color: $lightBg;
 }
 

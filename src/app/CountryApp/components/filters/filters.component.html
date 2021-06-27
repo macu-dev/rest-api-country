@@ -1,4 +1,4 @@
 <select class="form-select h-100 shadow filter" aria-label="region">
   <option selected>Filter by region</option>
-  <option  class="filter__option"value="1">One</option>
+  <option *ngFor="let region of regions">{{region}}</option>
 </select>
