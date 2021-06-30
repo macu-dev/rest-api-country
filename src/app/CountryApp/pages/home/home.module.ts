@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { InputComponent } from '../../components/input/input.component';
 import { FiltersComponent } from '../../components/filters/filters.component';
 import {CardCountryComponent } from '../../components/card-country/card-country.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,10 +18,11 @@ import {CardCountryComponent } from '../../components/card-country/card-country.
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule
   ],
 
-  exports:[
+  exports: [
     InputComponent,
     FiltersComponent
   ]

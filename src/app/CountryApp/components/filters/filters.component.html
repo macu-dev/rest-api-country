@@ -1,4 +1,5 @@
-<select class="form-select h-100 shadow filter" aria-label="region">
-  <option selected>Filter by region</option>
-  <option *ngFor="let region of regions">{{region}}</option>
+<select [(ngModel)]="index" class="form-select h-100 shadow filter" aria-label="region" (change)="selectOption($event)">
+  <option selected value="-1">Filter by region</option>
+  <option *ngFor="let region of regions; index as i;" [value]="i">{{region | titlecase}}</option>
 </select>
+

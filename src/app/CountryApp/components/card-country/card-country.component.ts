@@ -11,7 +11,7 @@ export class CardCountryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.country);
+
   }
 
 
