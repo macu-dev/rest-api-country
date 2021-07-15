@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -25,6 +27,7 @@ import { FormsModule } from '@angular/forms';
   exports: [
     InputComponent,
     FiltersComponent
+
   ]
 })
 export class HomeModule { }

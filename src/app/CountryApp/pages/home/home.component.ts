@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountriesService } from 'src/app/services/countries.service';
 import { Country } from '../../models/Country.interface';
@@ -20,8 +20,11 @@ export class HomeComponent implements OnInit {
     'oceania'
   ];
   regionActive = -1;
+  word = '';
+  isError = false;
 
-  constructor(private actividatedRoute: ActivatedRoute, private countriesService: CountriesService) { }
+  constructor(private actividatedRoute: ActivatedRoute,
+              private countriesService: CountriesService) { }
 
   getIndexChanged(i: string): void {
     this.regionActive = parseInt(i, 10);
@@ -29,7 +32,10 @@ export class HomeComponent implements OnInit {
   }
 
 
+
+
   ngOnInit(): void {
+
     this.getCountryAll();
   }
 
@@ -49,5 +55,28 @@ export class HomeComponent implements OnInit {
       .subscribe(countries => this.countries = countries);
     }
 
+  }
+
+
+  search(word: string): void{
+    this.word = word;
+    if(this.word == ''){
+      this.getCountryAll();
+    }else {
+      this.countriesService.searchCountries(this.word)
+      .subscribe(countries => {
+        this.countries = countries;
+        this.isError = false;
+        },(err) =>{
+          this.isError = true;
+          this.countries = [];
+          console.log(err);
+
+        }
+      )
+    }
+  }
+  getResultsSearch(word: string): void{
+    this.search(word);
   }
 }
