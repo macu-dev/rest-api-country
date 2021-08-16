@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: ShowCountryComponent
+  },
+  {
+    path: ':id',
+    component: ShowCountryComponent
   }
 ];
 

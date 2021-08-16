@@ -18,7 +18,7 @@ const routes: Routes = [
         loadChildren: () => import('./CountryApp/pages/home/home.module').then(m => m.HomeModule)
       },
       {
-        path: 'id',
+        path: 'pais',
         loadChildren: () => import('./CountryApp/pages/show-country/show-country.module').then(m => m.ShowCountryModule)
       },
 

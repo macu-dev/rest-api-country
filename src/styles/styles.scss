@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'utilities/variables';
+@import 'base/reset';
 @import 'layout/header';
 @import 'components/search';
 @import 'components/filters';
 @import 'components/cards';
 @import 'components/spinner';
+@import 'pages/show-country';
 
 
 body {

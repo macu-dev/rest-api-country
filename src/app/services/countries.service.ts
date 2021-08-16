@@ -13,7 +13,8 @@ export class CountriesService {
 
   get httpParams(): HttpParams{
     // agreamos esto al url
-    return new HttpParams().set('fields', 'name;capital;alpha2Code;flag;population');
+    return new HttpParams().set('fields',
+    'name;capital;alpha2Code;flag;population;region;subregion;topLevelDomain;currencies;languages;borders;nativeName');
   }
 
   constructor(private http: HttpClient) { }
@@ -30,4 +31,16 @@ export class CountriesService {
     const url = `${this.urlApi}/name/${word}`;
     return this.http.get<Country[]>(url,  {params: this.httpParams});
   }
+
+  getCountry(word: string): Observable<Country>{
+    const url = `${this.urlApi}/name/${word}`;
+    return this.http.get<Country>(url,  {params: this.httpParams});
+  }
+
+  getCountryById(id: string): Observable<Country> {
+    const url = `${this.urlApi}/alpha/${id}`;
+    // dentro del pipe puedo colocar cualquier expresion de rxjs
+    return this.http.get<Country>(url);
+  }
+
 }

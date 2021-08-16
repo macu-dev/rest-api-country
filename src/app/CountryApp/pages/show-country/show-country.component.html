@@ -1,1 +1,52 @@
-<p>show-country works!</p>
+<div *ngIf="!country;else divCountry">
+  <p>Espere por favor</p>
+</div>
+
+<ng-template #divCountry>
+  <div class="row align-items-center">
+    <div class="col-lg-6">
+      <a routerLink="/home" class="btn shadow mb-4">
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg> Back
+      </a>
+      <div class="country-flag">
+        <img [src]="country.flag" [alt]="country.name" class="w-100">
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <h2>{{ country.name }}</h2>
+      <div class="country-details">
+        <p><strong>Native Name:</strong> {{country.nativeName}}</p>
+        <p><strong>Population:</strong> {{country.population}}</p>
+        <p><strong>Region:</strong> {{country.region}}</p>
+        <p><strong>Sub Region:</strong> {{country.subregion}}</p>
+        <p><strong>Capital:</strong> {{country.capital}}</p>
+        <p><strong>Top Level Domain:</strong> {{country.topLevelDomain}}</p>
+        <p>
+          <strong>Currencies:</strong>
+          <ng-template  ngFor let-currency [ngForOf]="country.currencies" >
+            {{currency.name}}
+          </ng-template>
+        </p>
+        <p>
+          <strong>Languages</strong>
+          <ng-template  ngFor let-language [ngForOf]="country.languages" >
+            {{language.name}},
+          </ng-template>
+        </p>
+      </div>
+      <div class="country-borders d-flex">
+        <ng-template [ngIf]="country.borders.length > 0">
+          <p><strong>Border Countries:</strong></p>
+        </ng-template>
+          <a  [routerLink]="['/pais', border]" *ngFor="let border of country.borders" class="btn shadow">
+            {{border}}
+          </a>
+      </div>
+
+    </div>
+
+  </div>
+</ng-template>
+
+
