@@ -1,0 +1,33 @@
+.dark{
+  background: $DarkBlue !important;
+  header{
+    background: $VeryDarkBlue;
+  }
+
+  *{
+    color: #fff;
+  }
+
+  svg path {
+    fill: #fff;
+  }
+
+  .card-body{
+    background: $VeryDarkBlue;
+  }
+
+  a, button{
+    color: #fff!important;
+  }
+
+  .form-select{
+    background-color: $VeryDarkBlue!important;
+    color: #fff!important;
+    border-color:$VeryDarkBlue!important;
+  }
+
+  input, form{
+    background: $VeryDarkBlue !important;
+    color: #fff!important;
+  }
+}
